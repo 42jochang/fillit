@@ -55,5 +55,5 @@ This project is coded in accordance with the school's norms. A full copy of the 
 
 ## Team
 
-JoChang
+JoChang  
 MMarcink
