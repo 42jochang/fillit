@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-# include "libft/libft.h"
+# include "libft/inc/libft.h"
 
 typedef struct		s_tet
 {
@@ -33,30 +33,22 @@ typedef struct		s_count
 	int				nc;
 }					t_count;
 
-int					valid_block(int *block);
-int					second_h_block(int *block);
-int					third_h_block(int *block);
-int					second_v_block(int *block);
-int					third_v_block(int *block);
 t_tet				*read_tet(int fd);
-int					*get_block(char *arr);
-int					check_count(int *block, char *arr);
-int					*trim_out(int *arr);
+void				fillit(t_tet *pieces);
+int					place_pieces(t_tet *pieces, char *board, int row, int p);
+
+/*
+** Display
+*/
+void				display_board(char *b);
+void				display_error(void);
+void				display_usage(void);
+
+/*
+** List
+*/
 t_tet				*ft_create_elem(int *data);
 void				ft_list_push_back(t_tet **begin_tet, int *data);
 int					ft_list_size(t_tet *begin_tet);
-void				fillit(t_tet *pieces);
-int					find_starting_square(int np);
-char				*malloc_board(size_t arr_size);
-int					valid_spot(t_tet *pieces, char *board, int row_size,\
-								int i);
-int					place_pieces(t_tet *pieces, char *board, int row_size,\
-								int piece_num);
-char				get_piece(int piece_num);
-void				add_piece(t_tet *pieces, char *board, int ints[3]);
-void				remove_piece(t_tet *pieces, char *board, int i,\
-								int row_size);
-void				display_error(void);
-void				display_usage(void);
 
 #endif

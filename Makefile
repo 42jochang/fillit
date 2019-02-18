@@ -14,24 +14,24 @@ NAME = fillit
 
 SRC = main.c \
 	  display.c \
-	  edit_board.c \
+	  place_pieces.c \
 	  fillit.c \
 	  ft_list_fun.c \
 	  read_tet.c \
-	  valid_block.c
 
 OBJ = $(SRC:.c=.o)
 
 INC = fillit.h
 
+CC = clang-6.0
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME):
 	make -C libft
-	gcc -g $(CFLAGS) -c $(SRC) -I $(INC)
-	gcc -g -o $(NAME) $(MAIN) $(OBJ) -L ./libft/ -lft
+	$(CC) -g $(CFLAGS) -c $(SRC) -I $(INC)
+	$(CC) -g -o $(NAME) $(MAIN) $(OBJ) -L ./libft/ -lft
 
 clean:
 	make -C libft clean

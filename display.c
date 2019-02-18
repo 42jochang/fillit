@@ -12,6 +12,34 @@
 
 #include "fillit.h"
 
+char *g_colors[6] = {
+	"\033[41m",
+	"\033[42m",
+	"\033[43m",
+	"\033[44m",
+	"\033[45m",
+	"\033[46m"
+};
+
+void	display_board(char *b)
+{
+	int		i;
+	int		c;
+
+	i = 0;
+	c = 0;
+	while (b[i])
+	{
+		ft_putstr(b[i] == '.' ? "\033[40m" : g_colors[b[i] % 6]);
+		if (b[i] == '\n')
+			write(1, "\n", 1);
+		else
+			write(1, "  ", 2);
+		//write(1, &b[i], 1);
+		i++;
+	}
+}
+
 void	display_error(void)
 {
 	write(1, "error\n", 6);

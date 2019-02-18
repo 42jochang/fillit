@@ -16,7 +16,7 @@ t_tet	*ft_create_elem(int *data)
 {
 	t_tet *tet;
 
-	tet = (t_tet*)malloc(sizeof(t_tet));
+	tet = (t_tet*)ft_memalloc(sizeof(t_tet));
 	if (tet)
 	{
 		tet->data = data;
